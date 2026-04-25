@@ -63,7 +63,6 @@ This way, you can modify the file and gain direct visual feedback on the changes
 
 -- SYSTEM
 
-"system": {
  "song_vol_int" = volume of the song playing
  
  "song_storage_int" = the program retains a memory of the songs it has played, to prevent looping over the same song. this changes the size of that memory
@@ -92,8 +91,6 @@ This way, you can modify the file and gain direct visual feedback on the changes
   "select_int" = the selected mode
   
   }
-  
-}
 
 
 ### REQUIRES PyDub: https://github.com/jiaaro/pydub
