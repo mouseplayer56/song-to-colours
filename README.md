@@ -12,6 +12,7 @@ This way, you can modify the file and gain direct visual feedback on the changes
 
 ## Configurations (Variables you can modify)
 -- GUI
+
 "width_int" = width of the window created
 
 "height_int" = height of the window created
@@ -61,6 +62,7 @@ This way, you can modify the file and gain direct visual feedback on the changes
 
 
 -- SYSTEM
+
 "system": {
  "song_vol_int" = volume of the song playing
  
