@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "PyDub": "git+https://github.com/jiaaro/pydub",
+    "Audioop-lts": "git+https://github.com/AbstractUmbra/audioop",
+    "PyGame": "git+https://github.com/pygame/pygame",
+    "Python-VLC": "https://github.com/oaubert/python-vlc/tree/master/examples"
+  }
+}
