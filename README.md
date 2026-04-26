@@ -104,7 +104,7 @@ This way, you can modify the file and gain direct visual feedback on the changes
   
   }
 
-
+## Prerequisites
 ### REQUIRES PyDub: https://github.com/jiaaro/pydub
 ### - Python 3.13+ requires Audioop-lts: https://github.com/AbstractUmbra/audioop
 ### REQUIRES PyGame: https://github.com/pygame/pygame
