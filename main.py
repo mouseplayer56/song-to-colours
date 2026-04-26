@@ -1,4 +1,4 @@
-# version 4.1
+# version 4.2
 
 import pydub
 import vlc
@@ -31,20 +31,22 @@ def get_next_song(param_list, dir_str):
         # print(f"prev: {prev}; curr: {cur}; num: {num}")
         try:
             v = vlc.MediaPlayer(os.path.join(dir_str, os.listdir(dir_str)[num]))  # try to play the file
-            if v.get_length() == -1:
-                raise Exception("File cannot be interpreted as song!")
-            elif size < len(temp_list - 1):
+            v.audio_set_volume(0)
+            v.play()
+            v.pause()
+            if size < len(temp_list) - 1:
                 break
         except Exception as ex:
             print(f"File error: {ex} (File {num})")
             v = None
         finally:
-            if v is not None and size < len(temp_list - 1):
+            if v is not None and size < len(temp_list) - 1:
                 break
             elif v is None:
                 exit(-1)
             else:
                 pass
+            v = None
     return num
 
 
