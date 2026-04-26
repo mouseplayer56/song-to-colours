@@ -1,4 +1,4 @@
-# version 4.2
+# version 4.3
 
 import pydub
 import vlc
@@ -31,9 +31,13 @@ def get_next_song(param_list, dir_str):
         # print(f"prev: {prev}; curr: {cur}; num: {num}")
         try:
             v = vlc.MediaPlayer(os.path.join(dir_str, os.listdir(dir_str)[num]))  # try to play the file
-            v.audio_set_volume(0)
+            print(v.audio_get_channel())
+            v.audio_set_mute(1)
+            # v.audio_set_channel()
             v.play()
             v.pause()
+            v.stop()
+            # v.flush()
             if size < len(temp_list) - 1:
                 break
         except Exception as ex:
@@ -41,6 +45,7 @@ def get_next_song(param_list, dir_str):
             v = None
         finally:
             if v is not None and size < len(temp_list) - 1:
+                # v.pause()
                 break
             elif v is None:
                 exit(-1)
@@ -252,6 +257,7 @@ while running:
         song_pydub = pydub.AudioSegment.from_file(song_dir)
         song_vlc = vlc.MediaPlayer(song_dir)
         song_vlc.audio_set_volume(sys_t["song_vol_int"])
+        song_vlc.audio_set_mute(0)
         song_vlc.play()
         # print(f"POST: {song_buffer_list}")
     else:
