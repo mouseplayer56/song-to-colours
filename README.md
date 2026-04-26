@@ -6,9 +6,13 @@ Essentially, just a collaborative mish-mash of external libraries to create this
 The GUI can be directly interacted with, using the mouse and some keyboard modifiers.
 
 Left Click = if "disable_mouse_bool" is false, will play the current song if it isn't playing OR play the next song if it is.
+
 Right Click = skips the current song ahead by 5% (or by +0.05 out of 1 within vlc).
+
 L. SHIFT + Right Click = changes the mode, which determines how the colour transitions are displayed.
+
 L. CTRL + L. SHIFT + Right Click = sets the mode to 'pause' (or, the last mode).
+
 
 ## modif.txt
 This file can be edited to display text in the GUI. Any text inside the file will be displayed.
