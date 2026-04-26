@@ -31,13 +31,10 @@ def get_next_song(param_list, dir_str):
         # print(f"prev: {prev}; curr: {cur}; num: {num}")
         try:
             v = vlc.MediaPlayer(os.path.join(dir_str, os.listdir(dir_str)[num]))  # try to play the file
-            print(v.audio_get_channel())
-            v.audio_set_mute(1)
-            # v.audio_set_channel()
-            v.play()
-            v.pause()
-            v.stop()
-            # v.flush()
+            v.audio_set_mute(1)  # mute the file
+            v.play()  # play silently
+            v.pause()  # pause it
+            v.stop()  # terminate it
             if size < len(temp_list) - 1:
                 break
         except Exception as ex:
@@ -45,7 +42,6 @@ def get_next_song(param_list, dir_str):
             v = None
         finally:
             if v is not None and size < len(temp_list) - 1:
-                # v.pause()
                 break
             elif v is None:
                 exit(-1)
